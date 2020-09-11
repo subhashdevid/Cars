@@ -13,6 +13,7 @@ class formVc: UIViewController, UITextViewDelegate {
 
     var data:NSArray = NSArray()
     var carBrandFlag:String?
+    var carModelFlag:String?
     var selectedTime:String?
     var datePicker = UIDatePicker()
     
@@ -149,20 +150,26 @@ class formVc: UIViewController, UITextViewDelegate {
     let USERID = UserDefaults.standard.string(forKey: "UserID")
     func validation () {
         if self.mobileTxt.text! == "" {
-                 self.view.makeToast("Please enter Mobile No.", duration: 3.0, position: .bottom)
+                 self.view.makeToast("Please enter your name", duration: 3.0, position: .bottom)
              } else if self.addressTxt.text! == "" {
-                 self.view.makeToast("Please enter your password.", duration: 3.0, position: .bottom)
+                 self.view.makeToast("Please enter your mobile number", duration: 3.0, position: .bottom)
         } else if self.nameTxt.text! == ""{
-            self.view.makeToast("Please enter your password.", duration: 3.0, position: .bottom)
+            self.view.makeToast("Please enter your address", duration: 3.0, position: .bottom)
         }
             
         else {
-            
-            Alamofire.request(bookServiceUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "userid":USERID,"service_category": userCatId,"city": userCity,"customer_name": self.nameTxt.text!,"address": self.addressTxt.text!,"mobile": self.mobileTxt.text,"brand": userSelectedCarBrand,"model": userSelectedCarModel,"fuel_type": userSelectedFuelType,"home_pickup": userSelectedPickup!,"book_date": self.dateTxt.text!,"book_time": userSelectedTime,"description": self.textView.text!],encoding: JSONEncoding.default, headers: nil).responseJSON {
+            SVProgressHUD.show()
+            Alamofire.request(bookServiceUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "userid":USERID ?? "","service_category": userCatId,"city": userCity,"customer_name": self.nameTxt.text!,"address": self.addressTxt.text ?? "","mobile": self.mobileTxt.text ?? "","brand": userSelectedCarBrand ?? "","model": userSelectedCarModel ?? "","fuel_type": userSelectedFuelType ?? "","home_pickup": userSelectedPickup ?? "","book_date": self.dateTxt.text!,"book_time": userSelectedTime ?? "","description": self.textView.text!],encoding: JSONEncoding.default, headers: nil).responseJSON {
                 response in
+                SVProgressHUD.dismiss()
                 switch response.result {
                 case .success:
-                    self.view.makeToast("Service booked succesfully.", duration: 3.0, position: .bottom)
+//                    self.view.makeToast("Service Booked Succesfully.", duration: 3.0, position: .bottom)
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let vc = storyBoard.instantiateViewController(withIdentifier: "ThankYouViewController") as! ThankYouViewController
+                              //        navigationController?.pushViewController(vc, animated: true)
+                              //        self.present(vc, animated: true, completion: nil)
+                              self.navigationController?.pushViewController(vc, animated: true)
 
                     break
                 case .failure(let error):
@@ -267,7 +274,7 @@ class formVc: UIViewController, UITextViewDelegate {
 
     func getCarModel() {
         SVProgressHUD.show()
-        Alamofire.request(carModelUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "brand_id": brandId!],encoding: JSONEncoding.default, headers: nil).responseJSON {
+        Alamofire.request(carModelUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "brand_id": brandId],encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
             SVProgressHUD.dismiss()
             switch response.result {
@@ -319,6 +326,7 @@ class formVc: UIViewController, UITextViewDelegate {
             }
         }
     }
+    
     
     
     func showActionSheet() {

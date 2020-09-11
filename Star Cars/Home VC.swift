@@ -31,6 +31,7 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.title = "StarCars"
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
@@ -73,6 +74,7 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         if userCity != nil {
             self.locBtn.setTitle(userCity!, for: .normal)
         }
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.title = "StarCars"
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)

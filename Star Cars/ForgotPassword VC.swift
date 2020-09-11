@@ -76,6 +76,7 @@ class ForgotPassword_VC: UIViewController {
                                 
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "ResetPasswordViewController") as! ResetPasswordViewController
+                    newViewController.mobilenumber = self.mobileTxt.text
                     self.navigationController?.pushViewController(newViewController, animated: true)
                    
                 } else {
@@ -88,6 +89,10 @@ class ForgotPassword_VC: UIViewController {
             }
         }
     }
+    
+    
+    
+    
     
     
     

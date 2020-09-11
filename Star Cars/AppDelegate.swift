@@ -11,7 +11,7 @@ import Alamofire
 import IQKeyboardManagerSwift
 
 var userId:String?
-var brandId:String!
+var brandId:Int?
 var selectedCarBrand:String = "Select Brand"
 var selectedCarModel:String = "Select Model"
 var selectedFuelType:String = "Select Fuel Type"
