@@ -24,12 +24,6 @@ class Register_VC: UIViewController {
         UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 
-//        var nav = self.navigationController?.navigationBar
-//        nav?.barStyle = UIBarStyle.black
-//        nav?.tintColor = UIColor.white
-//        self.navigationController?.title = "Registration"
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-
         
     }
     
