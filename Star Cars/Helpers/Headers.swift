@@ -12,6 +12,9 @@ import UIKit
 let registerUrl = "http://starcar.xyz/bimmer/index.php/registers"
 let loginUrl = "http://starcar.xyz/bimmer/index.php/login"
 let forgotPasswordUrl = "http://starcar.xyz/bimmer/index.php/forgetpassword"
+let forgetpassword_otp = "http://starcar.xyz/bimmer/index.php/forgetpassword_otp"
+let create_newpass = "http://starcar.xyz/bimmer/index.php/create_newpass"
+
 let createPasswordUrl = "http://starcar.xyz/bimmer/index.php/create_newpass"
 let getHomeDataUrl = "http://starcar.xyz/bimmer/index.php/gethomecategory"
 let profileUrl = "http://starcar.xyz/bimmer/index.php/getprofile"

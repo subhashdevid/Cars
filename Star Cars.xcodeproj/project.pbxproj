@@ -48,6 +48,7 @@
 		BF812F6C250B6227005CD193 /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = BF812F6B250B6226005CD193 /* eye.png */; };
 		BF812F6E250B6233005CD193 /* phoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF812F6D250B6233005CD193 /* phoneIcon.png */; };
 		BF812F70250B6258005CD193 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = BF812F6F250B6258005CD193 /* mail.png */; };
+		BF812F72250BAA59005CD193 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF812F71250BAA59005CD193 /* ResetPasswordViewController.swift */; };
 		C75EA39DE8FFCE3F7EBF562B /* Pods_Star_Cars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DAD2D5926542573B9E1024E /* Pods_Star_Cars.framework */; };
 		D7EC662324F771D7001C1917 /* logoutVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EC662224F771D7001C1917 /* logoutVc.swift */; };
 		D7EE9863250A2C0E00C04711 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EE9862250A2C0D00C04711 /* Connection.swift */; };
@@ -102,6 +103,7 @@
 		BF812F6B250B6226005CD193 /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye.png; sourceTree = "<group>"; };
 		BF812F6D250B6233005CD193 /* phoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phoneIcon.png; sourceTree = "<group>"; };
 		BF812F6F250B6258005CD193 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		BF812F71250BAA59005CD193 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D7EC662224F771D7001C1917 /* logoutVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logoutVc.swift; sourceTree = "<group>"; };
 		D7EE9862250A2C0D00C04711 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 				71399CA5235C474700EF1C3A /* LaunchScreen.storyboard */,
 				71399CA8235C474700EF1C3A /* Info.plist */,
 				71C34E7F2361F82E0091A4C4 /* Helpers */,
+				BF812F71250BAA59005CD193 /* ResetPasswordViewController.swift */,
 			);
 			path = "Star Cars";
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				71399C9F235C474600EF1C3A /* ViewController.swift in Sources */,
 				718AEBD0236704A000527383 /* Headers.swift in Sources */,
 				71D6EFBD236F1DBF00260B26 /* aboutUsVc.swift in Sources */,
+				BF812F72250BAA59005CD193 /* ResetPasswordViewController.swift in Sources */,
 				718AEBDA236725A400527383 /* tableVc.swift in Sources */,
 				7112CA3B235CADA10083D3D7 /* Find VC.swift in Sources */,
 				71114D5723685C840065662B /* formVc.swift in Sources */,
