@@ -18,7 +18,8 @@ class Register_VC: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mobileTxt.tag = 100
+        mobileTxt.delegate = self
         self.title = "Registration"
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
         UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -110,6 +111,28 @@ class Register_VC: UIViewController {
 /**
  * extension for valid mobile / empcode
  */
+extension Register_VC: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        if textField.tag == 100 {
+            let charsLimit = 10
+
+                   let startingLength = textField.text?.count ?? 0
+                   let lengthToAdd = string.count
+                   let lengthToReplace =  range.length
+                   let newLength = startingLength + lengthToAdd - lengthToReplace
+
+                   return newLength <= charsLimit
+        }
+       
+        return true
+    }
+    
+    
+
+}
+
 
 extension String {
     var isValidPhoneNumber: Bool {

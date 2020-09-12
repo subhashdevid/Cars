@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         self.logoImgView.layer.borderColor = UIColor.black.cgColor
         self.logoImgView.layer.borderWidth = 2
         self.popUpView.layer.cornerRadius = 10
-
+        mobileTxt.tag = 100
         
 
         // Do any additional setup after loading the view.
@@ -112,64 +112,21 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITextViewDelegate {
-
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        textView.inputAccessoryView = self.toolBarView
-
-        return true
-    }
+extension ViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
-        // Handle backspace/delete
-        guard !string.isEmpty else {
+        if textField.tag == 100 {
+            let charsLimit = 10
 
-            // Backspace detected, allow text change, no need to process the text any further
-            return true
+                   let startingLength = textField.text?.count ?? 0
+                   let lengthToAdd = string.count
+                   let lengthToReplace =  range.length
+                   let newLength = startingLength + lengthToAdd - lengthToReplace
+
+                   return newLength <= charsLimit
         }
-
-        // Input Validation
-        // Prevent invalid character input, if keyboard is numberpad
-        if textField.keyboardType == .numberPad {
-
-            // Check for invalid input characters
-            if CharacterSet(charactersIn: "0123456789").isSuperset(of: CharacterSet(charactersIn: string)) {
-
-                // Present alert so the user knows what went wrong
-//                presentAlert("This field accepts only numeric entries.")
-
-                // Invalid characters detected, disallow text change
-                return false
-            }
-        }
-
-        // Length Processing
-        // Need to convert the NSRange to a Swift-appropriate type
-        if let text = textField.text, let range = Range(range, in: text) {
-
-            let proposedText = text.replacingCharacters(in: range, with: string)
-
-            // Check proposed text length does not exceed max character count
-            guard proposedText.count <= 10 else {
-
-                // Present alert if pasting text
-                // easy: pasted data has a length greater than 1; who copy/pastes one character?
-                if string.count > 1 {
-
-                    // Pasting text, present alert so the user knows what went wrong
-//                    presentAlert("Paste failed: Maximum character count exceeded.")
-                }
-
-                // Character count exceeded, disallow text change
-                return false
-            }
-
-            // Only enable the OK/submit button if they have entered all numbers for the last four
-            // of their SSN (prevents early submissions/trips to authentication server, etc)
-        }
-
-        // Allow text change
+       
         return true
     }
     

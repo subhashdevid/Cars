@@ -26,7 +26,6 @@ class ResetPasswordViewController: UIViewController {
         super.viewDidLoad()
         self.title = "OTP Verification"
         self.getOTPforReset()
-        
         self.submitBtn.addTarget(self, action: #selector(submitActn), for: .touchUpInside)
     }
     

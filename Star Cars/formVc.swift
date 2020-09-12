@@ -34,6 +34,8 @@ class formVc: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mobileTxt.delegate = self
+        mobileTxt.tag = 100
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.isTranslucent = false
         self.setupToHideKeyboardOnTapOnView()
@@ -360,4 +362,26 @@ class formVc: UIViewController, UITextViewDelegate {
         self.showActionSheet()
     }
     
+}
+
+extension formVc: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        if textField.tag == 100 {
+            let charsLimit = 10
+
+                   let startingLength = textField.text?.count ?? 0
+                   let lengthToAdd = string.count
+                   let lengthToReplace =  range.length
+                   let newLength = startingLength + lengthToAdd - lengthToReplace
+
+                   return newLength <= charsLimit
+        }
+       
+        return true
+    }
+    
+    
+
 }
