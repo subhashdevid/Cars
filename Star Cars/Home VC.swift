@@ -13,7 +13,6 @@ import SDWebImage
 class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var locBtn: UIButton!
-    @IBOutlet var menuBtn: UIBarButtonItem!
     @IBOutlet var collView: UICollectionView!
     @IBOutlet var findView: UIView!
     @IBOutlet var imgOne: UIImageView!
@@ -109,12 +108,7 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             return self.bannerArr.count
         }
     }
-    
-    @IBAction func menuActn(_ sender: Any) {
-        //        let menu = SideMenuNavigationController(rootViewController: tableVc)
-        //        present(menu, animated: true, completion: nil)
-        
-    }
+ 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -236,18 +230,6 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             }
         }
     }
-    
-    //    func sideMenus() {
-    //
-    ////        if revealViewController() != nil {
-    ////            menuBtn.target = revealViewController()
-    ////            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-    ////            revealViewController()?.rearViewRevealWidth = 275
-    ////            revealViewController()
-    ////
-    ////            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
-    ////        }
-    //    }
     
     private func setupSideMenu() {
         

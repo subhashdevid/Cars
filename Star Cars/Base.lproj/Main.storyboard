@@ -505,7 +505,7 @@
                                                     </constraints>
                                                     <state key="normal" image="address"/>
                                                     <connections>
-                                                        <action selector="menuActn:" destination="lD9-XV-Ea2" eventType="touchUpInside" id="bcj-Uf-7J4"/>
+                                                        <action selector="locActn:" destination="lD9-XV-Ea2" eventType="touchUpInside" id="wvD-R8-vsz"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKJ-gG-6uJ">
@@ -764,8 +764,7 @@
                         <outlet property="findView" destination="zyu-Ya-iEf" id="Xwm-bl-GID"/>
                         <outlet property="imgOne" destination="zfr-ju-MVr" id="CLL-hm-DCx"/>
                         <outlet property="imgtwo" destination="wUA-DF-H2I" id="Aj0-9u-H3W"/>
-                        <outlet property="locBtn" destination="wBB-4T-v1a" id="7iG-Kf-z70"/>
-                        <outlet property="menuBtn" destination="XMr-XR-HQP" id="50T-RH-SHs"/>
+                        <outlet property="locBtn" destination="xKJ-gG-6uJ" id="DHE-0l-fms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNG-h9-Rcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1314,6 +1313,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="cellIcon" destination="6Uh-3J-XnN" id="pg3-Nn-6U9"/>
+                                            <outlet property="cellTitleLbl" destination="cW0-qa-hfN" id="BNA-qy-IYt"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuImgCell" rowHeight="200" id="Mba-L7-Ctw" customClass="SideMenuImgCell" customModule="StarCars" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="102" width="414" height="200"/>
@@ -1336,6 +1339,9 @@
                                                 <constraint firstItem="V4V-wW-GVL" firstAttribute="centerX" secondItem="tru-TS-PQC" secondAttribute="centerX" id="Gc5-hb-O1Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellIcon" destination="V4V-wW-GVL" id="LL8-Vy-9ja"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
