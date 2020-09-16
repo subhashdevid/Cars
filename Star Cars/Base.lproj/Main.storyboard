@@ -1245,7 +1245,6 @@
             <objects>
                 <navigationController id="vPk-rL-3T8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b9m-iF-S43">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3181,7 +3180,6 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0zh-dJ-O8R">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3208,7 +3206,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UZp-Bk-S6l" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YdR-mZ-8l9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3224,7 +3221,6 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ag8-Zy-ORJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
