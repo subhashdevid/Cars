@@ -2,7 +2,7 @@
 //  Find VC.swift
 //  Star Cars
 //
-//  Created by Ritesh on 20/10/19.
+//  Created by Shikha on 20/10/19.
 //
 
 import UIKit
@@ -12,8 +12,6 @@ class Find_VC: UIViewController, UITextViewDelegate {
     @IBOutlet var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.setupToHideKeyboardOnTapOnView()
         self.textView.text = "Description"
         self.textView.textColor = UIColor.lightGray
         self.textView.delegate = self

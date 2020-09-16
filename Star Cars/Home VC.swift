@@ -13,12 +13,10 @@ import SDWebImage
 class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var locBtn: UIButton!
-    @IBOutlet var toggleBtn: UIButton!
     @IBOutlet var menuBtn: UIBarButtonItem!
     @IBOutlet var collView: UICollectionView!
     @IBOutlet var findView: UIView!
     @IBOutlet var imgOne: UIImageView!
-    
     @IBOutlet var bannerCollView: UICollectionView!
     @IBOutlet var imgtwo: UIImageView!
     var categoryArr:NSArray = NSArray()
@@ -43,28 +41,14 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         SideMenuManager.default.menuWidth = (UIScreen.main.bounds.size.width/4)*2
         setupSideMenu()
         startTimer()
+        collView.isScrollEnabled = false
         if internetConnection.isConnectedToNetwork() == true{
             getHomeData()
         }
         else {
             self.view.makeToast("please check your internet.", duration: 3.0, position: .bottom)
         }
-        
-        
-        //        let btn1 = UIButton(type: .custom)
-        //        btn1.setImage(UIImage(named: "logout-1-110657"), for: .normal)
-        //        btn1.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        ////        btn1.addTarget(self, action: #selector(Class.Methodname), for: .touchUpInside)
-        //        let item1 = UIBarButtonItem(customView: btn1)
-        //
-        ////        let btn2 = UIButton(type: .custom)
-        ////        btn2.setImage(UIImage(named: "208-2082147_history-icon-png-history-icon-png-white.png"), for: .normal)
-        ////        btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        //////        btn2.addTarget(self, action: #selector(Class.MethodName), for: .touchUpInside)
-        ////        let item2 = UIBarButtonItem(customView: btn2)
-        //
-        //        self.navigationItem.setRightBarButtonItems([item1], animated: true)
-        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -189,7 +173,7 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             let collectionViewWidth = collView.bounds.width
             let collectionHeight = collView.bounds.height
             
-            return CGSize(width: (collectionViewWidth - 60)/3, height: ((collectionHeight - 40)/2))
+            return CGSize(width: (collectionViewWidth - 60)/3, height: ((collectionHeight - 40)/1.9))
             
         } else {
             let collectionViewWidth = bannerCollView.bounds.width
