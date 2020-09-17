@@ -164,6 +164,7 @@ class formVc: UIViewController, UITextViewDelegate {
             Alamofire.request(bookServiceUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "userid":USERID ?? "","service_category": userCatId,"city": userCity,"customer_name": self.nameTxt.text!,"address": self.addressTxt.text ?? "","mobile": self.mobileTxt.text ?? "","brand": userSelectedCarBrand ?? "","model": userSelectedCarModel ?? "","fuel_type": userSelectedFuelType ?? "","home_pickup": userSelectedPickup ?? "","book_date": self.dateTxt.text!,"book_time": userSelectedTime ?? "","description": self.textView.text!],encoding: JSONEncoding.default, headers: nil).responseJSON {
                 response in
                 SVProgressHUD.dismiss()
+                print(response)
                 switch response.result {
                 case .success:
 //                    self.view.makeToast("Service Booked Succesfully.", duration: 3.0, position: .bottom)

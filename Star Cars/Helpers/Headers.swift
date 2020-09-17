@@ -31,6 +31,7 @@ let getOtpUrl = "http://api.msg91.com/api/sendhttp.php"
 let bookServiceUrl = "\(AppURL.BASE_URL)book_service"
 let historyUrl = "\(AppURL.BASE_URL)getbookservice"
 let homeCategory = "\(AppURL.BASE_URL)gethomecategory"
+let sendquery = "\(AppURL.BASE_URL)send_query"
 
 
 extension UIViewController {

@@ -2690,7 +2690,10 @@
                         <viewLayoutGuide key="safeArea" id="zTB-Hi-ZJS"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="9Bb-VV-GXZ" id="eGF-oo-oVH"/>
+                        <outlet property="desctextView" destination="9Bb-VV-GXZ" id="Net-Oj-YBw"/>
+                        <outlet property="mobileTextfield" destination="Uwi-sr-2ak" id="tqi-a7-Nhu"/>
+                        <outlet property="nameTextfield" destination="hO1-kW-H5u" id="51R-ne-pzO"/>
+                        <outlet property="titleTextfield" destination="tu0-TH-3P4" id="opJ-5N-0du"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5D-63-uAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
