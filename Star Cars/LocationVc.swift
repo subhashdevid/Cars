@@ -12,18 +12,33 @@ import Alamofire
 class LocationVc: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var data:NSArray = NSArray()
+    var screen : String?
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+
 
     @IBOutlet var collView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if screen != "home" {
+            self.navigationItem.hidesBackButton  = true
+            self.navigationController?.isNavigationBarHidden = false
+            UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+
+
+        }else{
+            self.navigationItem.hidesBackButton  = false
+        }
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+               self.title = "Select Location"
+        
         collView.delegate = self
         collView.dataSource = self
         locationApi()
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.title = "Select Location"
+       
 
     }
     
@@ -77,7 +92,26 @@ class LocationVc: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let value = self.data.object(at: indexPath.row) as! NSDictionary
         userCity = value.value(forKey: "city_name") as? String
-        self.navigationController?.popViewController(animated: true)
+        
+        UserDefaults.standard.set(userCity, forKey: "userCity")
+
+        
+        if screen == "home" {
+            self.navigationController?.popViewController(animated: true)
+
+        }else{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home_VC") as! Home_VC
+            
+            let navController = UINavigationController.init(rootViewController: vc)
+            navController.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+            
+            navController.navigationBar.isTranslucent = false
+            self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+            UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+            
+            self.appDelegate?.window?.rootViewController = navController
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

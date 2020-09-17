@@ -81,19 +81,9 @@ class ViewController: UIViewController {
                     print(USERID ?? "")
                     let userid = respDic.object(forKey: "id")
                     userId = "\(userid ?? 10)"
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home_VC") as! Home_VC
+                   
+                    self.checkLocationofUser()
                     
-                    let navController = UINavigationController.init(rootViewController: vc)
-                    navController.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
-
-                    navController.navigationBar.isTranslucent = false
-                    self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
-                    UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                    UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-                    
-                    
-                    
-                    self.appDelegate?.window?.rootViewController = navController
                 } else {
                     self.view.makeToast("Invalid Credentials.", duration: 3.0, position: .bottom)
                 }
@@ -109,8 +99,48 @@ class ViewController: UIViewController {
     @IBAction func DoneAction(_ sender: Any) {
         self.view.endEditing(true)
     }
+   
+    func checkLocationofUser() {
+        
+        let city = UserDefaults.standard.object(forKey: "userCity")
+        
+        if city == nil {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "LocationVc") as! LocationVc
+            let navController = UINavigationController.init(rootViewController: vc)
+                       navController.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+                       
+                       navController.navigationBar.isTranslucent = false
+                       self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+                       UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                       UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        
+        }else{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home_VC") as! Home_VC
+            
+            let navController = UINavigationController.init(rootViewController: vc)
+            navController.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+            
+            navController.navigationBar.isTranslucent = false
+            self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+            UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+            
+            self.appDelegate?.window?.rootViewController = navController
+        }
+        
+    }
+    
+    
     
 }
+
+
+
+
+
 
 extension ViewController: UITextFieldDelegate {
     

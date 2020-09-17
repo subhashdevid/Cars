@@ -92,20 +92,8 @@ class OtpVc: UIViewController {
                     self.view.makeToast("User registered Successfully.", duration: 3.0, position: .bottom)
                     userId = resdic!.object(forKey: "userid") as? String
                     UserDefaults.standard.set(userId, forKey: "UserID")
+                    self.checkLocationofUser()
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home_VC") as! Home_VC
-                        
-                        let navController = UINavigationController.init(rootViewController: vc)
-                        navController.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
-
-                        navController.navigationBar.isTranslucent = false
-                        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
-                        UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-                        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-                    appDelegate?.window?.rootViewController = navController
-               
-
                 } else {
                     self.view.makeToast("Something went wrong. Please try again after sometime.", duration: 3.0, position: .bottom)
                     
@@ -117,6 +105,42 @@ class OtpVc: UIViewController {
             }
         }
     }
+    
+    
+    func checkLocationofUser() {
+        
+        let city = UserDefaults.standard.object(forKey: "userCity")
+        
+        if city == nil {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "LocationVc") as! LocationVc
+            let navController = UINavigationController.init(rootViewController: vc)
+                       navController.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+                       
+                       navController.navigationBar.isTranslucent = false
+                       self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+                       UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                       UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        
+        }else{
+           let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home_VC") as! Home_VC
+                
+                let navController = UINavigationController.init(rootViewController: vc)
+                navController.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+
+                navController.navigationBar.isTranslucent = false
+                self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)
+                UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            appDelegate?.window?.rootViewController = navController
+        }
+        
+    }
+    
+    
 
 }
 

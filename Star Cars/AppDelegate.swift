@@ -42,9 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         let USERID = UserDefaults.standard.string(forKey: "UserID")
+        let city = UserDefaults.standard.object(forKey: "userCity")
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if USERID == nil {
+        if USERID == nil || city == nil {
             let vc = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             let navController = UINavigationController.init(rootViewController: vc)
             navController.navigationBar.barTintColor = #colorLiteral(red: 0.5803921569, green: 0.06666666667, blue: 0, alpha: 1)

@@ -27,7 +27,7 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     var text = ["Mechanical or Electrical Repair","Mechanical or Electrical Repair","Mechanical or Electrical Repair","Mechanical or Electrical Repair","Mechanical or Electrical Repair","Mechanical or Electrical Repair"]
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.title = "StarCars"
@@ -54,9 +54,14 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         super.viewWillAppear(true)
         self.findView.layer.borderWidth = 0.5
         self.findView.layer.borderColor = UIColor.black.cgColor
+       
+                
+        let city = UserDefaults.standard.object(forKey: "userCity")
+        userCity = city as? String
         if userCity != nil {
             self.locBtn.setTitle(userCity!, for: .normal)
         }
+        
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.title = "StarCars"
@@ -95,8 +100,7 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
     @IBAction func locActn(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LocationVc") as! LocationVc
-        //        navigationController?.pushViewController(vc, animated: true)
-        //        self.present(vc, animated: true, completion: nil)
+        vc.screen = "home"
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
