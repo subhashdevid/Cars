@@ -41,7 +41,7 @@ class HistoryCell: UITableViewCell {
         fueltypeLbl.text = historyDic.object(forKey: "fuel_type") as? String
         bookDateLbl.text = historyDic.object(forKey: "book_date") as? String
         pickupLbl.text = historyDic.object(forKey: "home_pickup") as? String
-        cellView.backgroundColor = UIColor.red
+        cellView.backgroundColor = UIColor.groupTableViewBackground
         
     }
     

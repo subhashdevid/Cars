@@ -189,24 +189,8 @@ class Home_VC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    //    func getHomeData() {
-    //        let params = ["key": "5642vcb546gfnbvb7r6ewc211365vhh34"]
-    //        let homeurl = "http://starcar.xyz/bimmer/index.php/gethomecategory"
-    //        NetworkEngine.sharedInstance.postRequestHandler(homeurl, isBaseAuthorized: false, params: params as Dictionary<String, AnyObject>, completionHandler: { ( response: AnyObject?, error:NSError?, httpStatusCode:Int?) in
-    //            DispatchQueue.main.async(execute: {
-    //                if error == nil && response != nil {
-    //                    print(response!)
-    //                    let alert = UIAlertController(title: "Success!", message: "Password updated successfully.", preferredStyle: .alert)
-    //                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-    //                        self.navigationController?.popViewController(animated: true)
-    //                    }))
-    //                    self.present(alert, animated: true, completion: nil)
-    //                }
-    //            })
-    //        })
-    //    }
     func getHomeData() {
-        let urlString = "http://starcar.xyz/bimmer/index.php/gethomecategory"
+        let urlString = homeCategory
         Alamofire.request(urlString, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34"],encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
             switch response.result {

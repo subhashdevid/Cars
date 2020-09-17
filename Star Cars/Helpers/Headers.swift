@@ -8,24 +8,30 @@
 import Foundation
 import UIKit
 
+struct AppURL {
+    static let BASE_URL = "http://starcar.xyz/bimmer/index.php/"
+}
 
-let registerUrl = "http://starcar.xyz/bimmer/index.php/registers"
-let loginUrl = "http://starcar.xyz/bimmer/index.php/login"
-let forgotPasswordUrl = "http://starcar.xyz/bimmer/index.php/forgetpassword"
-let forgetpassword_otp = "http://starcar.xyz/bimmer/index.php/forgetpassword_otp"
-let create_newpass = "http://starcar.xyz/bimmer/index.php/create_newpass"
 
-let createPasswordUrl = "http://starcar.xyz/bimmer/index.php/create_newpass"
-let getHomeDataUrl = "http://starcar.xyz/bimmer/index.php/gethomecategory"
-let profileUrl = "http://starcar.xyz/bimmer/index.php/getprofile"
-let contactUsUrl = "http://starcar.xyz/bimmer/index.php/get_contacts"
-let fueltypeurl = "http://starcar.xyz/bimmer/index.php/getfuel_type_list"
-let carModelUrl = "http://starcar.xyz/bimmer/index.php/getmodel"
-let carBrandurl = "http://starcar.xyz/bimmer/index.php/getbrand"
-let locationurl = "http://starcar.xyz/bimmer/index.php/getcity"
+let registerUrl = "\(AppURL.BASE_URL)registers"
+let loginUrl = "\(AppURL.BASE_URL)login"
+let forgotPasswordUrl = "\(AppURL.BASE_URL)forgetpassword"
+let forgetpassword_otp = "\(AppURL.BASE_URL)forgetpassword_otp"
+let create_newpass = "\(AppURL.BASE_URL)create_newpass"
+
+let createPasswordUrl = "\(AppURL.BASE_URL)create_newpass"
+let getHomeDataUrl = "\(AppURL.BASE_URL)gethomecategory"
+let profileUrl = "\(AppURL.BASE_URL)getprofile"
+let contactUsUrl = "\(AppURL.BASE_URL)get_contacts"
+let fueltypeurl = "\(AppURL.BASE_URL)getfuel_type_list"
+let carModelUrl = "\(AppURL.BASE_URL)getmodel"
+let carBrandurl = "\(AppURL.BASE_URL)getbrand"
+let locationurl = "\(AppURL.BASE_URL)getcity"
 let getOtpUrl = "http://api.msg91.com/api/sendhttp.php"
-let bookServiceUrl = "http://starcar.xyz/bimmer/index.php/book_service"
-let historyUrl = "http://starcar.xyz/bimmer/index.php/getbookservice"
+let bookServiceUrl = "\(AppURL.BASE_URL)book_service"
+let historyUrl = "\(AppURL.BASE_URL)getbookservice"
+let homeCategory = "\(AppURL.BASE_URL)gethomecategory"
+
 
 extension UIViewController {
     func showValidatorAlert(_ title: String, message: String) {
