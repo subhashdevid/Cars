@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct AppURL {
-    static let BASE_URL = "http://starcar.xyz/bimmer/index.php/"
+    static let BASE_URL = "http://starscar.xyz/bimmer/index.php/"
 }
 
 

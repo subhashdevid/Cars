@@ -65,13 +65,17 @@ class formDetailtblVc: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let clickedValue = self.data.object(at: indexPath.row) as! NSDictionary
+        
         if carBrandFlag == "carBrand" {
             brandId = clickedValue.value(forKey: "id") as? Int
             selectedCarBrand = (clickedValue.value(forKey: "brand_name") as? String)!
             userSelectedCarBrand = (clickedValue.value(forKey: "brand_name") as? String)!
         } else if carBrandFlag == "carModel" {
+            
+            
             selectedCarModel = (clickedValue.value(forKey: "model_name") as? String)!
             userSelectedCarModel = selectedCarModel
+           
         } else if carBrandFlag == "fuelType" {
             selectedFuelType = (clickedValue.value(forKey: "fuel_type") as? String)!
             userSelectedFuelType = selectedFuelType

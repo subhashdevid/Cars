@@ -215,7 +215,7 @@ class formVc: UIViewController, UITextViewDelegate {
         if brandId != nil {
             getCarModel()
         } else {
-            print("success")
+            self.view.makeToast("Please Select Brand")
         }
     }
     @IBAction func fueltypeActn(_ sender: UIButton) {
@@ -277,7 +277,7 @@ class formVc: UIViewController, UITextViewDelegate {
 
     func getCarModel() {
         SVProgressHUD.show()
-        Alamofire.request(carModelUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "brand_id": brandId],encoding: JSONEncoding.default, headers: nil).responseJSON {
+        Alamofire.request(carModelUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "brand_id": brandId ?? 0],encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
             SVProgressHUD.dismiss()
             switch response.result {
