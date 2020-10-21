@@ -151,14 +151,17 @@ class formVc: UIViewController, UITextViewDelegate {
     
     let USERID = UserDefaults.standard.string(forKey: "UserID")
     func validation () {
-        if self.mobileTxt.text! == "" {
-                 self.view.makeToast("Please enter your name", duration: 3.0, position: .bottom)
-             } else if self.addressTxt.text! == "" {
-                 self.view.makeToast("Please enter your mobile number", duration: 3.0, position: .bottom)
-        } else if self.nameTxt.text! == ""{
+        
+       
+        if self.nameTxt.text! == ""{
+            self.view.makeToast("Please enter your name", duration: 3.0, position: .bottom)
+        }
+        else if self.mobileTxt.text! == "" {
+            self.view.makeToast("Please enter your mobile number", duration: 3.0, position: .bottom)
+        }
+        else if self.addressTxt.text! == "" {
             self.view.makeToast("Please enter your address", duration: 3.0, position: .bottom)
         }
-            
         else {
             SVProgressHUD.show()
             Alamofire.request(bookServiceUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "userid":USERID ?? "","service_category": userCatId,"city": userCity,"customer_name": self.nameTxt.text!,"address": self.addressTxt.text ?? "","mobile": self.mobileTxt.text ?? "","brand": userSelectedCarBrand ?? "","model": userSelectedCarModel ?? "","fuel_type": userSelectedFuelType ?? "","home_pickup": userSelectedPickup ?? "","book_date": self.dateTxt.text!,"book_time": userSelectedTime ?? "","description": self.textView.text!],encoding: JSONEncoding.default, headers: nil).responseJSON {
@@ -186,6 +189,7 @@ class formVc: UIViewController, UITextViewDelegate {
     
     
     @IBAction func submitActn(_ sender: Any) {
+        self.view.endEditing(true)
         if internetConnection.isConnectedToNetwork() == true {
         validation()
         }
