@@ -88,16 +88,22 @@ class Find_VC: UIViewController, UITextViewDelegate {
             self.view.makeToast("Please enter your mobile number", duration: 3.0, position: .center)
             return
         }
+        
+        if self.mobileTextfield.text?.count ?? 0 < 10 {
+            count = count + 1
+            self.view.makeToast("Please enter correct mobile number", duration: 3.0, position: .bottom)
+            return
+        }
         if self.titleTextfield.text! == ""{
             count = count + 1
-            self.view.makeToast("Please enter title", duration: 3.0, position: .center)
+            self.view.makeToast("Please enter title", duration: 3.0, position: .bottom)
             
             return
             
         }
         
         if !(self.validateDescriptionString(descString: self.descriptionString)) {
-            self.view.makeToast("Please enter description", duration: 3.0, position: .center)
+            self.view.makeToast("Please enter description", duration: 3.0, position: .bottom)
             count = count + 1
             
         }

@@ -51,7 +51,7 @@ class ResetPasswordViewController: UIViewController {
         else {
             if self.mobileOtpTxt.text != randomNumber {
                  count = count + 1
-                self.view.makeToast("please enter correct OTP.", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please enter correct OTP.", duration: 3.0, position: .bottom)
             }
         }
         

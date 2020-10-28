@@ -31,6 +31,12 @@ class OtpVc: UIViewController {
         if self.otpTxt.text! == randomNumber! {
             self.registerApi()
         }
+        else{
+            
+                 //count = count + 1
+                self.view.makeToast("Please enter correct OTP.", duration: 5.0, position: .bottom)
+            }
+        
     }
         else {
             self.view.makeToast("please check your internet.", duration: 3.0, position: .bottom)

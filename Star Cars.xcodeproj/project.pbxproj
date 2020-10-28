@@ -163,11 +163,11 @@
 				717CACE6236ED72E00B840B0 /* LocationVc.swift */,
 				717CACE8236ED76A00B840B0 /* locCell.swift */,
 				71D6EFBC236F1DBF00260B26 /* aboutUsVc.swift */,
+				D7EC662224F771D7001C1917 /* logoutVc.swift */,
 				7112EA7723818052000A1F4C /* FaqVC.swift */,
 				71399C9E235C474600EF1C3A /* ViewController.swift */,
 				BF43F7BD250A75FD00B15837 /* SideMenuViewController.swift */,
 				71114D5423684E4A0065662B /* detailVc.swift */,
-				D7EC662224F771D7001C1917 /* logoutVc.swift */,
 				71399CA0235C474600EF1C3A /* Main.storyboard */,
 				71399CA3235C474700EF1C3A /* Assets.xcassets */,
 				71399CA5235C474700EF1C3A /* LaunchScreen.storyboard */,
@@ -536,14 +536,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9TA9SAVC4B;
 				INFOPLIST_FILE = "Star Cars/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.avas.starcars;
 				PRODUCT_NAME = StarCars;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -562,14 +562,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9TA9SAVC4B;
 				INFOPLIST_FILE = "Star Cars/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.avas.starcars;
 				PRODUCT_NAME = StarCars;
 				PROVISIONING_PROFILE_SPECIFIER = "";

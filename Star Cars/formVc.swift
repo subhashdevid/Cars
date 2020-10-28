@@ -159,9 +159,34 @@ class formVc: UIViewController, UITextViewDelegate {
         else if self.mobileTxt.text! == "" {
             self.view.makeToast("Please enter your mobile number", duration: 3.0, position: .bottom)
         }
+        else if self.mobileTxt.text?.count ?? 0 < 10 {
+            self.view.makeToast("Please enter correct mobile number", duration: 3.0, position: .bottom)
+        }
         else if self.addressTxt.text! == "" {
             self.view.makeToast("Please enter your address", duration: 3.0, position: .bottom)
         }
+        else if BrandBtn.titleLabel?.text == "Select Brand"{
+            self.view.makeToast("Please Select Brand")
+        }
+        else if modelBtn.titleLabel?.text == "Select Model"{
+            self.view.makeToast("Please Select Model")
+        }
+        else if fuelBtn.titleLabel?.text == "Select Fuel Type"{
+            self.view.makeToast("Please Select Fuel Type")
+        }
+        else if pickupBtn.titleLabel?.text == "Need Home Pickup?"{
+            self.view.makeToast("Please Select need home pickup")
+        }
+        else if dateTxt.text == ""{
+            self.view.makeToast("Please Select Date")
+        }
+        else if timeTxt.text == ""{
+            self.view.makeToast("Please Select time")
+        }
+        else if self.textView.text == "Vehicle Description"{
+            self.view.makeToast("Please write description")
+        }
+        
         else {
             SVProgressHUD.show()
             Alamofire.request(bookServiceUrl, method: .post, parameters: ["key": "5642vcb546gfnbvb7r6ewc211365vhh34", "userid":USERID ?? "","service_category": userCatId,"city": userCity,"customer_name": self.nameTxt.text!,"address": self.addressTxt.text ?? "","mobile": self.mobileTxt.text ?? "","brand": userSelectedCarBrand ?? "","model": userSelectedCarModel ?? "","fuel_type": userSelectedFuelType ?? "","home_pickup": userSelectedPickup ?? "","book_date": self.dateTxt.text!,"book_time": userSelectedTime ?? "","description": self.textView.text!],encoding: JSONEncoding.default, headers: nil).responseJSON {
@@ -212,6 +237,7 @@ class formVc: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func carBrandActn(_ sender: UIButton) {
+        
         getCarBrand()
     }
     

@@ -25,11 +25,6 @@ class aboutUsVc: UIViewController {
       
     }
     
-    @IBAction func backActn(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-        self.present(vc, animated: false, completion: nil)
-    }
-    
     /*
     // MARK: - Navigation
 

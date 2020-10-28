@@ -2900,9 +2900,80 @@
             <point key="canvasLocation" x="6103" y="1266"/>
         </scene>
         <!--FaqVC-->
+        <scene sceneID="VSh-kJ-ekE">
+            <objects>
+                <viewController storyboardIdentifier="FaqVC" id="0Gf-rM-ZsV" customClass="FaqVC" customModule="StarCars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ke-nj-LHB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xrp-uU-40f">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FAQCell" rowHeight="105" id="4Dx-Q9-uy0" customClass="FAQCell" customModule="StarCars" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Dx-Q9-uy0" id="hvj-3Y-BWu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pn-Od-KXL">
+                                                    <rect key="frame" x="10" y="10" width="394" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elE-Ua-KSc">
+                                                    <rect key="frame" x="10" y="39.5" width="394" height="55.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="elE-Ua-KSc" firstAttribute="leading" secondItem="hvj-3Y-BWu" secondAttribute="leading" constant="10" id="3NC-m5-Txw"/>
+                                                <constraint firstItem="6pn-Od-KXL" firstAttribute="top" secondItem="hvj-3Y-BWu" secondAttribute="top" constant="10" id="6VA-gV-von"/>
+                                                <constraint firstAttribute="bottom" secondItem="elE-Ua-KSc" secondAttribute="bottom" constant="10" id="GSa-gU-APe"/>
+                                                <constraint firstAttribute="trailing" secondItem="6pn-Od-KXL" secondAttribute="trailing" constant="10" id="Vos-UR-Wmv"/>
+                                                <constraint firstItem="6pn-Od-KXL" firstAttribute="leading" secondItem="hvj-3Y-BWu" secondAttribute="leading" constant="10" id="isB-Ei-nLg"/>
+                                                <constraint firstAttribute="trailing" secondItem="elE-Ua-KSc" secondAttribute="trailing" constant="10" id="pQ4-ba-swR"/>
+                                                <constraint firstItem="elE-Ua-KSc" firstAttribute="top" secondItem="6pn-Od-KXL" secondAttribute="bottom" constant="10" id="zIP-eO-JNg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subTitleLbl" destination="elE-Ua-KSc" id="tN0-c2-RmF"/>
+                                            <outlet property="titleLbl" destination="6pn-Od-KXL" id="C1B-KH-vnZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0Gf-rM-ZsV" id="Kbr-jK-gDa"/>
+                                    <outlet property="delegate" destination="0Gf-rM-ZsV" id="frr-Es-4Pe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y4G-dt-BYL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xrp-uU-40f" firstAttribute="top" secondItem="Y4G-dt-BYL" secondAttribute="top" id="Oue-Ip-85x"/>
+                            <constraint firstItem="Y4G-dt-BYL" firstAttribute="trailing" secondItem="xrp-uU-40f" secondAttribute="trailing" id="bF2-aR-52V"/>
+                            <constraint firstItem="Y4G-dt-BYL" firstAttribute="bottom" secondItem="xrp-uU-40f" secondAttribute="bottom" id="ii7-qR-g72"/>
+                            <constraint firstItem="xrp-uU-40f" firstAttribute="leading" secondItem="Y4G-dt-BYL" secondAttribute="leading" id="u6m-ak-1Qo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tblView" destination="xrp-uU-40f" id="w0F-gC-RxK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JU7-d4-Krc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6795.652173913044" y="978.34821428571422"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="IEk-Zi-gZc">
             <objects>
-                <viewController storyboardIdentifier="FaqVC" id="Kh9-l8-I10" customClass="FaqVC" customModule="StarCars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kh9-l8-I10" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X3a-d8-oEq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2987,9 +3058,31 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxc-Na-7VS">
-                                                <rect key="frame" x="10" y="667.5" width="394" height="67"/>
-                                                <string key="text">You can book a Star Cars car service directly from our website or by downloading the exclusive Android App IOS App. Want a more human experience? call or WhatsApp on +91 9999999116</string>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxc-Na-7VS">
+                                                <rect key="frame" x="10" y="667.5" width="394" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-1G-29g">
+                                                <rect key="frame" x="13" y="659" width="394" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">You can book a Star Cars car service directly from our website or by downloading the exclusive IOS App. Want a more human experience? call or WhatsApp on +91 9999999116</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q: How to book a car service with Star Cars?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVI-xd-5yt">
+                                                <rect key="frame" x="8" y="744" width="394" height="19.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATJ-Nv-hVI">
+                                                <rect key="frame" x="16" y="773" width="394" height="67"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">We have made booking a car service as easy as 1-2-3. Just select you Car's make, model and fuel type, select the type of car. We have made booking a car service as easy as 1-2-3.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3036,6 +3129,35 @@
                                             <constraint firstAttribute="height" constant="820" id="zwg-JU-EfX"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q: What if I am not available to  drop my car?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx6-KN-K1b">
+                                        <rect key="frame" x="11" y="835" width="394" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Worry not! We'll take care of everything. We offer free pick-up and drop-in." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXc-CA-pVL">
+                                        <rect key="frame" x="17" y="855" width="394" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q: Do I have to pay before the service?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9i2-A8-A4Z">
+                                        <rect key="frame" x="14" y="904" width="394" height="19.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5B-Ye-vXd">
+                                        <rect key="frame" x="18" y="920" width="394" height="103"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Not at all. From the booking to delivery, our priority at Star Cars keeps You and Your Car Service first. We will send you the bill once your car is serviced and inspected by our professionals. We offer flexible payment options for your ease. You can still prepay if you choose to.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="y4g-DU-8c6" firstAttribute="leading" secondItem="PiY-Ui-aoT" secondAttribute="leading" id="5Yj-r7-ffc"/>
@@ -3045,6 +3167,35 @@
                                     <constraint firstItem="y4g-DU-8c6" firstAttribute="top" secondItem="PiY-Ui-aoT" secondAttribute="top" id="xsq-Gt-9Th"/>
                                 </constraints>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q: What if I am not available to  drop my car?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw0-9Z-1AG">
+                                <rect key="frame" x="1" y="-90" width="394" height="19.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q: What if I am not available to  drop my car?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fon-y4-bgN">
+                                <rect key="frame" x="1" y="-90" width="394" height="19.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DS-gw-ft6">
+                                <rect key="frame" x="1" y="-90" width="394" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">We have made booking a car service as easy as 1-2-3. Just select you Car's make, model and fuel type, select the type of car. We have made booking a car service as easy as 1-2-3.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q: How to book a car service with Star Cars?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMj-7S-Aoi">
+                                <rect key="frame" x="1" y="-90" width="394" height="19.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p1N-Nc-T3Y"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3060,7 +3211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qq3-CZ-Ngg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6824.6376811594209" y="815.625"/>
+            <point key="canvasLocation" x="7432" y="873"/>
         </scene>
         <!--Forgot Password-->
         <scene sceneID="cF5-e7-vBM">
